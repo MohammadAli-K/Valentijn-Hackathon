@@ -21,3 +21,13 @@ Knop toevoegen om resultaat op social media te delen.
 Code uploaden naar GitHub en live zetten via GitHub Pages.
 Code optimaliseren en testen op verschillende schermformaten.
 ~ Tools: JavaScript, GitHub Pages, Social Media API’s.
+
+Love Tester
+
+Beschrijving:
+Dit project is een interactieve "Love Tester" waar twee gebruikers hun namen invoeren en een geboortedatum kunnen toevoegen om een willekeurig liefdespercentage te krijgen, samen met een bericht over hun relatie.
+
+Werking van het project:
+Gebruikers voeren hun namen in het formulier in en klikken op de knop Test de liefde.
+Er wordt een willekeurig percentage gegenereerd tussen 10% en 100% en een bijpassend bericht wordt getoond.
+De resultaten worden opgeslagen in LocalStorage, zodat ze bij een herlaad van de pagina weer zichtbaar zijn.
