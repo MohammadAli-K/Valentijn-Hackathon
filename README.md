@@ -23,3 +23,4 @@ Knop toevoegen om resultaat op social media te delen.
 Code uploaden naar GitHub en live zetten via GitHub Pages.
 Code optimaliseren en testen op verschillende schermformaten.
 ~ Tools: JavaScript, GitHub Pages, Social Media API’s.
+## Test!
