@@ -21,9 +21,3 @@ Knop toevoegen om resultaat op social media te delen.
 Code uploaden naar GitHub en live zetten via GitHub Pages.
 Code optimaliseren en testen op verschillende schermformaten.
 ~ Tools: JavaScript, GitHub Pages, Social Media API’s.
-<<<<<<< HEAD
-*Hello, I'm Mohammed*
-=======
-
-niggers
->>>>>>> ac7d5d5fc1328f0632e9893ea28b3d23a6e4a224
