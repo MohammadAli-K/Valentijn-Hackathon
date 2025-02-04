@@ -1,7 +1,7 @@
 // Geluiden instellen
 const clickSound = new Audio("sounds/click.mp3");
 const resultSound = new Audio("sounds/result.mp3");
-const oofSound = new Audio("sounds/sad.mp3");
+const oofSound = new Audio("sounds/oof.mp3");
 const jippieSound = new Audio("sounds/jippie.mp3");
 
 // Achtergrondmuziek
@@ -79,3 +79,4 @@ document.getElementById("matchButton").addEventListener("click", function () {
 
 // Laad laatste resultaat bij pagina-opstart
 window.onload = loadLastResult;
+
