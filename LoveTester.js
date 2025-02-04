@@ -79,4 +79,3 @@ document.getElementById("matchButton").addEventListener("click", function () {
 
 // Laad laatste resultaat bij pagina-opstart
 window.onload = loadLastResult;
-
