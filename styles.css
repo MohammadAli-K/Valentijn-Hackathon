@@ -1,4 +1,14 @@
-.Birthday{
-    
-    
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Remove default body margin */
+}
+
+.matchButton {
+    /* Your existing styles if needed */
+    position: relative;
+    top: 0px;
+    right: 5px;
 }
