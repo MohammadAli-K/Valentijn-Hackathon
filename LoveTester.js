@@ -21,7 +21,7 @@ function getLoveMessage(percentage) {
     if (percentage > 75) return "Jullie zijn een geweldig stel! 😍";
     if (percentage > 50) return "Er is zeker chemie! 🔥";
     if (percentage > 30) return "Misschien een leuke vriendschap? 😊";
-    if (percentage > 20) return "Jullie zijn beter als vrienden... 💔";
+    return "Jullie zijn beter als vrienden... 💔";
 }
 
 // Functie om de test op te slaan
