@@ -8,7 +8,10 @@ body {
 
 .matchButton {
     /* Your existing styles if needed */
+    width: 20px;
+    height: 50px;
     position: relative;
     top: 0px;
-    right: 5px;
+    right: 0px;
+    
 }
