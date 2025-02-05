@@ -1,7 +1,7 @@
 // Geluiden instellen
 const clickSound = new Audio("sounds/click.mp3");
 const resultSound = new Audio("sounds/result.mp3");
-const oofSound = new Audio("sounds/oof.mp3");
+const oofSound = new Audio("sounds/sad.mp3");
 const jippieSound = new Audio("sounds/jippie.mp3");
 
 // Achtergrondmuziek
@@ -30,21 +30,8 @@ function saveLoveResult(birth1, birth2, percentage, message) {
     localStorage.setItem("loveResult", JSON.stringify(resultData));
 }
 
-// Functie om laatste test op te halen
-function loadLastResult() {
-    const savedResult = localStorage.getItem("loveResult");
-    if (savedResult) {
-        const { birth1, birth2, percentage, message } = JSON.parse(savedResult);
-        document.getElementById("resultDiv").innerHTML = `
-            <h2>${birth1} ❤️ ${birth2}</h2>
-            <h3>${percentage}%</h3>
-            <p>${message}</p>
-        `;
-    }
-}
-
 // Eventlistener voor de knop
-document.getElementById("matchButton").addEventListener("click", function () {
+document.getElementById("matchButton").addEventListener("click", function (event) {
     event.preventDefault();
 
     const birth1 = document.getElementById("birth1").value;
@@ -77,5 +64,10 @@ document.getElementById("matchButton").addEventListener("click", function () {
     saveLoveResult(birth1, birth2, percentage, message);
 });
 
-// Laad laatste resultaat bij pagina-opstart
-window.onload = loadLastResult;
+// Verwijder oude resultaten bij het openen van de pagina**
+window.onload = function () {
+    document.getElementById("resultDiv").innerHTML = "";
+    document.getElementById("birth1").value = "";
+    document.getElementById("birth2").value = "";
+};
+
