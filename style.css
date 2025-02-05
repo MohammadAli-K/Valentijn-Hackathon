@@ -21,7 +21,7 @@ body,html{
   body{
     margin:0;
     padding:0;
-    background:#f29ed9;
+    background:#6ba0e6;
   }
   .bubbles{
     position:absolute;
@@ -32,19 +32,19 @@ body,html{
     top:0;
     left:0;
   }
-  .bubble{
+  .bubble {
     position: absolute;
-    bottom:-100px;
-    width:40px;
+    bottom: -100px;
+    width: 40px;
     height: 40px;
-    background:#ff0000;
-    opacity:0.5;
-    animation: rise 10s infinite ease-in;
+    opacity: 0.8;
+    animation: rise 100s infinite ease-in;
     background-image: url(heart.png);
     background-size: contain;
     background-repeat: no-repeat;
-    
-  }
+    background-color: transparent;
+}
+
   .bubble:nth-child(1){
     width:40px;
     height:40px;
