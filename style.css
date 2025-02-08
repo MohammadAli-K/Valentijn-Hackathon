@@ -22,6 +22,7 @@ body {
     margin:0;
     padding:0;
     background:#6ba0e6;
+    font-family: cursive;
   }
   .bubbles{
     position:absolute;
