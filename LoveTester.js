@@ -30,20 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }, duration * 1000);
     }
 
+    test();
+
     // Genereer constant nieuwe bubbels
     setInterval(createBubble, 500);
 
     // GELUIDEN INSTELLEN
     const clickSound = new Audio("sounds/click.mp3");
-    const resultSound = new Audio("sounds/result.mp3");
     const oofSound = new Audio("sounds/sad.mp3");
     const jippieSound = new Audio("sounds/jippie.mp3");
 
-    // Achtergrondmuziek
-    const backgroundMusic = new Audio("sounds/background-music.mp3");
-    backgroundMusic.loop = true;
-    backgroundMusic.volume = 0.5;
-    backgroundMusic.play();
+
 
     //Functie voor random percentage
     function getRandomLovePercentage() {
@@ -112,4 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("birth2").value = "";
     };
 });
+
+    // Achtergrondmuziek
+    function test (){
+        const backgroundMusic = new Audio("sounds/background-music.mp3");
+        backgroundMusic.loop = true;
+        backgroundMusic.volume = 0.5;
+        backgroundMusic.play();
+    }
 
