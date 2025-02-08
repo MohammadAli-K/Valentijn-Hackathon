@@ -18,12 +18,14 @@ body {
     width:100%;
     height: 100%;
   }
+
   body{
     margin:0;
     padding:0;
     background:#6ba0e6;
     font-family: cursive;
   }
+
   .bubbles{
     position:absolute;
     width:100%;
@@ -33,6 +35,7 @@ body {
     top:0;
     left:0;
   }
+  
   .bubble {
     position: absolute;
     bottom: -100px;
