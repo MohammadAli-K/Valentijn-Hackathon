@@ -30,19 +30,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }, duration * 1000);
     }
 
-    test();
-
     // Genereer constant nieuwe bubbels
     setInterval(createBubble, 500);
 
     // GELUIDEN INSTELLEN
-    const clickSound = new Audio("sounds/click.mp3");
+    const clickSound = new Audio("sounds/click.mp3");  // Voeg clickSound toe
+    const resultSound = new Audio("sounds/result.mp3"); // Voeg resultSound toe
     const oofSound = new Audio("sounds/sad.mp3");
     const jippieSound = new Audio("sounds/jippie.mp3");
 
+    // Achtergrondmuziek instellen
+    const backgroundMusic = new Audio("sounds/background-music.mp3");
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.5;
 
+    const soundButton = document.getElementById("toggleSound");
 
-    //Functie voor random percentage
+    // Check of er een eerdere voorkeur is opgeslagen
+    if (localStorage.getItem("music") === "on") {
+        backgroundMusic.play();
+        soundButton.innerHTML = "🔊 Geluid Uit";
+    } else {
+        soundButton.innerHTML = "🔈 Geluid Aan";
+    }
+
+    // Knop klikken = muziek aan/uit en opslaan
+    soundButton.addEventListener("click", function () {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            soundButton.innerHTML = "🔊 Geluid Uit";
+            localStorage.setItem("music", "on");
+        } else {
+            backgroundMusic.pause();
+            soundButton.innerHTML = "🔈 Geluid Aan";
+            localStorage.setItem("music", "off");
+        }
+    });
+
+    // Functie voor random percentage
     function getRandomLovePercentage() {
         return Math.floor(Math.random() * 101); // 0 t/m 100%
     }
@@ -56,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return "Jullie zijn beter als vrienden... 💔";
     }
 
-    //Functie om de test op te slaan
+    // Functie om de test op te slaan
     function saveLoveResult(birth1, birth2, percentage, message) {
         const resultData = { birth1, birth2, percentage, message };
         localStorage.setItem("loveResult", JSON.stringify(resultData));
     }
 
-    //Eventlistener voor de knop
+    // Eventlistener voor de knop
     const matchButton = document.getElementById("matchButton");
 
     if (matchButton) {
@@ -80,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const percentage = getRandomLovePercentage();
             const message = getLoveMessage(percentage);
 
-            clickSound.play();
+            clickSound.play();  // Klikgeluid afspelen
 
             document.getElementById("resultDiv").innerHTML = `
                 <h2>${birth1} ❤️ ${birth2}</h2>
@@ -88,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${message}</p>
             `;
 
-            setTimeout(() => resultSound.play(), 500);
+            setTimeout(() => resultSound.play(), 500);  // Geluid voor resultaat
 
             if (percentage < 40) {
-                oofSound.play();
+                oofSound.play();  // Foutgeluid
             } else {
-                jippieSound.play();
+                jippieSound.play();  // Succesgeluid
             }
 
             saveLoveResult(birth1, birth2, percentage, message);
@@ -102,19 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("ERROR: matchButton niet gevonden!");
     }
 
-    //Verwijder oude resultaten bij het openen van de pagina
+    // Verwijder oude resultaten bij het openen van de pagina
     window.onload = function () {
         document.getElementById("resultDiv").innerHTML = "";
         document.getElementById("birth1").value = "";
         document.getElementById("birth2").value = "";
     };
 });
-
-    // Achtergrondmuziek
-    function test (){
-        const backgroundMusic = new Audio("sounds/background-music.mp3");
-        backgroundMusic.loop = true;
-        backgroundMusic.volume = 0.5;
-        backgroundMusic.play();
-    }
 

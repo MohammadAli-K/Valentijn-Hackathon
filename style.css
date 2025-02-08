@@ -8,6 +8,11 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  margin-top: -100px; /* Pas de waarde aan om het hoger te zetten */
+}
+
+
 .container {
   position: relative;
   z-index: 1;
@@ -33,6 +38,33 @@ body {
   background-color: transparent;
   animation: rise linear infinite;
 }
+
+/* Algemene stijl voor Playfair Display */
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Vetgedrukte versie */
+.playfair-display-bold {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+/* Extra dikke versie */
+.playfair-display-extra-bold {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+}
+
+/* Stijl specifiek voor titels */
+h1, h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
 
 /* Verbeterde snelheid en startpositie */
 @keyframes rise {
